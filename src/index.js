@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { NetworkErrorBoundary } from './components/NetworkErrorBoundary';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <NetworkErrorBoundary fallback={<p>An error has occured, please reload the page.</p>}>
+      <App />
+    </NetworkErrorBoundary>
   </React.StrictMode>
 );
 
